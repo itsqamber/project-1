@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World | Contact</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Hello World home">
+        <span class="brand-mark">*</span>
+        <span>Hello World</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a class="active" href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main class="content-panel">
+      <div class="page-grid">
+        <section>
+          <h2>Say <span class="gradient-text">hello</span></h2>
+          <p>Drop a quick note through the form, or use the direct link below. The form is decorative for now, ready to be wired up later.</p>
+          <div class="contact-card">
+            <strong>Email</strong>
+            <p><a href="mailto:hello@example.com">hello@example.com</a></p>
+          </div>
+        </section>
+
+        <form class="contact-form">
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name">
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="you@example.com">
+          </label>
+          <label>
+            Message
+            <textarea name="message" placeholder="Write something friendly..."></textarea>
+          </label>
+          <button class="button primary" type="submit">Send Message</button>
+        </form>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
