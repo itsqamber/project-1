@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #111827;
+      --panel: rgba(17, 24, 39, 0.72);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --cyan: #22d3ee;
+      --rose: #fb7185;
+      --gold: #facc15;
+      --line: rgba(255, 255, 255, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 15%, rgba(34, 211, 238, 0.35), transparent 28rem),
+        radial-gradient(circle at 80% 20%, rgba(251, 113, 133, 0.28), transparent 24rem),
+        radial-gradient(circle at 50% 85%, rgba(250, 204, 21, 0.22), transparent 26rem),
+        linear-gradient(135deg, #08111f 0%, var(--bg) 48%, #1f2937 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+      background-size: 46px 46px;
+      mask-image: radial-gradient(circle, black 0%, transparent 72%);
+      pointer-events: none;
+    }
+
+    main {
+      width: min(92vw, 760px);
+      padding: 56px;
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--panel);
+      box-shadow: 0 28px 90px rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(18px);
+      text-align: center;
+    }
+
+    .spark {
+      width: 78px;
+      height: 78px;
+      margin: 0 auto 26px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: conic-gradient(from 130deg, var(--cyan), var(--rose), var(--gold), var(--cyan));
+      box-shadow: 0 0 42px rgba(34, 211, 238, 0.38);
+      animation: turn 8s linear infinite;
+    }
+
+    .spark span {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: inherit;
+      background: #111827;
+      font-size: 30px;
+      animation: counter-turn 8s linear infinite;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 9vw, 6.5rem);
+      line-height: 0.95;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    h1 span {
+      display: block;
+      color: transparent;
+      background: linear-gradient(90deg, var(--cyan), #ffffff, var(--rose));
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    p {
+      max-width: 560px;
+      margin: 24px auto 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      line-height: 1.7;
+    }
+
+    .actions {
+      margin-top: 34px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    a {
+      min-height: 46px;
+      padding: 12px 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.09);
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    a:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.45);
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    a.primary {
+      border: 0;
+      color: #07111f;
+      background: linear-gradient(90deg, var(--cyan), var(--gold));
+    }
+
+    @keyframes turn {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes counter-turn {
+      to {
+        transform: rotate(-360deg);
+      }
+    }
+
+    @media (max-width: 560px) {
+      main {
+        padding: 38px 24px;
+        border-radius: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="spark" aria-hidden="true">
+      <span>*</span>
+    </div>
+    <h1>Hello <span>World</span></h1>
+    <p>A tiny page with a little glow, a little motion, and a friendly first step into the browser.</p>
+    <div class="actions">
+      <a class="primary" href="#" aria-label="Say hello">Say Hello</a>
+      <a href="#" aria-label="Explore the page">Explore</a>
+    </div>
+  </main>
+</body>
+</html>
