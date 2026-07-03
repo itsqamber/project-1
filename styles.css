@@ -257,6 +257,94 @@ p {
   margin-top: 8px;
 }
 
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 34px;
+}
+
+.gallery-item {
+  min-height: 220px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03)),
+    var(--tile-art);
+  background-size: cover;
+  box-shadow: inset 0 -90px 80px rgba(8, 17, 31, 0.68);
+}
+
+.gallery-item::before {
+  content: "";
+  position: absolute;
+  inset: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+.gallery-item strong,
+.gallery-item span {
+  position: relative;
+  z-index: 1;
+}
+
+.gallery-item strong {
+  font-size: 1.12rem;
+}
+
+.gallery-item span {
+  margin-top: 6px;
+  color: var(--muted);
+}
+
+.tile-aurora {
+  --tile-art:
+    radial-gradient(circle at 24% 24%, rgba(34, 211, 238, 0.88), transparent 32%),
+    radial-gradient(circle at 76% 30%, rgba(251, 113, 133, 0.78), transparent 34%),
+    linear-gradient(135deg, #0f172a, #312e81);
+}
+
+.tile-sunrise {
+  --tile-art:
+    radial-gradient(circle at 50% 22%, rgba(250, 204, 21, 0.9), transparent 24%),
+    linear-gradient(160deg, #7c2d12, #be123c 48%, #0f172a);
+}
+
+.tile-lagoon {
+  --tile-art:
+    radial-gradient(circle at 30% 70%, rgba(52, 211, 153, 0.82), transparent 32%),
+    linear-gradient(135deg, #064e3b, #155e75 52%, #111827);
+}
+
+.tile-neon {
+  --tile-art:
+    linear-gradient(90deg, rgba(34, 211, 238, 0.8) 8%, transparent 8% 18%, rgba(251, 113, 133, 0.75) 18% 28%, transparent 28%),
+    linear-gradient(135deg, #020617, #1e1b4b);
+}
+
+.tile-orbit {
+  --tile-art:
+    radial-gradient(circle at 50% 50%, transparent 0 22%, rgba(255, 255, 255, 0.58) 23% 24%, transparent 25%),
+    radial-gradient(circle at 70% 35%, rgba(250, 204, 21, 0.9), transparent 12%),
+    linear-gradient(135deg, #111827, #581c87);
+}
+
+.tile-bloom {
+  --tile-art:
+    radial-gradient(circle at 34% 42%, rgba(251, 113, 133, 0.84), transparent 24%),
+    radial-gradient(circle at 58% 54%, rgba(250, 204, 21, 0.74), transparent 26%),
+    radial-gradient(circle at 70% 32%, rgba(34, 211, 238, 0.68), transparent 20%),
+    linear-gradient(135deg, #0f172a, #3b0764);
+}
+
 label {
   display: grid;
   gap: 8px;
@@ -301,7 +389,8 @@ textarea:focus {
 
 @media (max-width: 760px) {
   .site-header,
-  .page-grid {
+  .page-grid,
+  .gallery-grid {
     grid-template-columns: 1fr;
   }
 
@@ -312,6 +401,12 @@ textarea:focus {
 
   .nav {
     justify-content: flex-start;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 980px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
